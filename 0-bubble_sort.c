@@ -1,38 +1,35 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
 #include "sort.h"
-
 /**
- * bubble_sort - sorts and prints an array.
- * @array: array to be sorted.
- * @size: size of array.
- **/
-
+ * bubble_sort - sort an array using the bubble sort algorithm
+ * @array: the array to be sorted
+ * @size: size of the array
+ */
 void bubble_sort(int *array, size_t size)
 {
-	int temp;
-	size_t i;
-	size_t j;
+	size_t i, j;
+	int tmp;
 	bool swapped;
 
 	if (array == NULL || size == 0)
 		return;
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size - 1; i++)
 	{
 		swapped = false;
-		for (j = 0; j < size - i; j++)
+		for (j = 0; j < size - i - 1; j++)
 		{
-			if (array[j] < array[j - 1])
+			if (array[j] > array[j + 1])
 			{
-				temp = array[j];
-				array[j] = array[j - 1];
-				array[j - 1] = temp;
+				tmp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = tmp;
 				print_array(array, size);
 				swapped = true;
 			}
 		}
 		if (!swapped)
+		{
 			break;
+		}
+
 	}
 }

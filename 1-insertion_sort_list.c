@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "sort.h"
 /**
  * insertion_sort_list - sort the list using the insertion sort algorithm
